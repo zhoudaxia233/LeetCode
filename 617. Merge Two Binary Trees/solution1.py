@@ -6,11 +6,10 @@ class Solution:
         :rtype: TreeNode
         """
         # This method changes the existing tree instead of returning a new one
-        if t1 is None:
-            return t2
-        if t2 is None:
+        if t1 and t2:
+            t1.val += t2.val
+            t1.left = self.mergeTrees(t1.left, t2.left)
+            t1.right = self.mergeTrees(t1.right, t2.right)
             return t1
-        t1.val += t2.val
-        t1.left = self.mergeTrees(t1.left, t2.left)
-        t1.right = self.mergeTrees(t1.right, t2.right)
-        return t1
+        else:
+            return t1 or t2

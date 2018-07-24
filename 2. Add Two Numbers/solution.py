@@ -11,7 +11,7 @@ class Solution:
         :type l2: ListNode
         :rtype: ListNode
         """
-        dummyHead= l = ListNode(0)
+        dummyHead = l = ListNode(0)
         carry = 0
         
         while l1 or l2:
